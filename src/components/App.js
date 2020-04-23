@@ -1,15 +1,23 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 const home = () => {
     return(
-        <div>Home Page</div>
+        <div>
+            <div>
+                Home Page
+            </div>
+            <Link to="/about">About</Link>
+        </div>
     );
 };
 
 const about = () => {
     return(
-        <div>About Page</div>
+        <div>
+            <div>About Page</div>
+            <Link to="/">Home</Link>
+        </div>
     );
 };
 
@@ -18,8 +26,8 @@ const App = () => {
         <div>
             <BrowserRouter>
                 <div>
-                    <Route path="/" exact component={home}>Home Page</Route>
-                    <Route path="/about" component={about}>About Page</Route>
+                    <Route path="/" exact component={home}></Route>
+                    <Route path="/about" component={about}></Route>
                 </div>
             </BrowserRouter>
         </div>
